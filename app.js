@@ -1,10 +1,10 @@
 var express = require("express");
+var routes = require('./routes/index');
+
 var app = express();
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
+app.use('/', routes);
 
-app.listen(8080, function () {
+app.listen(process.env.PORT || 8080, function () {
   console.log('Example app listening on port 8080!');
 });
