@@ -1,14 +1,25 @@
 {
   "name": "isal",
   "version": "1.0.0",
-  "description": "",
+  "description": "image search abstration layer",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start:dev": "nodemon app"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.14.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeffm64/image-search-abstraction-layer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jeffm64/image-search-abstraction-layer/issues"
+  },
+  "homepage": "https://github.com/jeffm64/image-search-abstraction-layer#readme"
 }
