@@ -1,6 +1,3 @@
-if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config();
-}
 
 var path = require("path");
 var db = require("./config/db");
