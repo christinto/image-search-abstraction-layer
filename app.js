@@ -14,6 +14,6 @@ app.use("/", routes);
 app.set("views", path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
-app.listen(process.env.PORT || 8080, function () {
+app.listen(process.env.PORT || 3000, function () {
   console.log("App listening on port 8080!");
 });
