@@ -1,6 +1,6 @@
 //var config = require("../../../sensitive_data/config");
 
-var connection = "mongodb://" + process.env.DB_HOST + "/" + process.env.DB_NAME;
+var connection = "mongodb://jeffm64:Locktight@ds113678.mlab.com:13678/image-search";
 var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
  

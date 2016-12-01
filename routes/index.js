@@ -4,7 +4,6 @@ var imgur = require("../services/imgur");
 var path = require("path");
 var History = require("../models/history");
  
- 
 router.get("/",function(req,res){
   res.sendFile(path.join(__dirname+'/index.html'));
 });
