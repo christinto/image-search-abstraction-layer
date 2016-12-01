@@ -10,26 +10,23 @@ router.get("/",function(req,res){
 });
 
 
-router.get("/latest", function (req, res) {
-  History.find({})
-    .select('term when -_id')
-    .sort('-when')
-    .limit(10)
-    .then(function (results) {
-      res.json(results);
-    });
+router.get("/search/:query", function (req, res) {
+  var query = req.params.query; 
+  var offset = req.query.offset;
+  var timestamp = Date.now();
+    
+  imgur.getImage(query, offset).then(function (ans) {
+    var queryHistory = new History({ term: query, time: timestamp });
+    queryHistory.save();
+    res.json(ans);
+  });
 });
 
 
-router.get("/search/:q", function (req, res) {
-  imgur.getImage(req.params.q, req.query.offset)
-    .then(function (ans) {
-      History.create({ term: req.params.q })
-        .then(function(history) {
-          console.log(history); // Save history successfully
-        });
-      res.json(ans);
-    });
+router.get("/latest", function (req, res) {
+  History.find({}, 'term when -_id').sort('-when').limit(10).then(function (results) {
+    res.status(200).json(results);
+  });
 });
  
 module.exports = router;
